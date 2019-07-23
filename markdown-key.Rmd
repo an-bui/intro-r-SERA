@@ -121,13 +121,13 @@ We won't go through all the code for this graph, but you can format this profess
 
 ```{r}
 mass_plot_pub <- ggplot(final, aes(x = reef_habitat, y = mean, fill = sea_urchin_species)) +
-  geom_col(position = "dodge", width = 0.8) +
+  geom_col(position = "dodge", width = 0.8, color = "black") +
   geom_errorbar(aes(ymin = mean - err, ymax = mean + err), position = position_dodge(0.8), width = 0.3) +
   scale_y_continuous(expand = c(0,0), limits = c(0, 24)) +
   scale_fill_manual(values = c("#616161", "#adadad")) +
   theme_minimal() +
   labs(x = "Reef Habitat",
-       y = "Average mass", 
+       y = "Average mass (g)", 
        fill = "Urchin species")
 
 mass_plot_pub
@@ -170,13 +170,13 @@ What if you wanted to see what trends between mass and spine length were for bot
 ```{r}
 scatter_new <- ggplot(urchins2, aes(x = sea_urchin_mass_g, y = sea_urchin_spine_length_cm, group = sea_urchin_species)) +
   facet_wrap(~reef_habitat) +
-  geom_point(aes(color = sea_urchin_species), size = 2) +
-  scale_color_manual(values = c("grey30", "grey50")) +
-  geom_smooth(method = lm, color = "black") +
+  geom_point(aes(shape = sea_urchin_species), size = 2, alpha = 0.8) +
+  scale_shape_manual(values = c(16, 2)) +
+  geom_smooth(method = lm, color = "red") +
   theme_minimal() +
   labs(x = "Sea urchin mass (g)", 
        y = "Sea urchin spine length (cm)",
-       color = "Sea urchin species")
+       shape = "Sea urchin species")
 
 scatter_new
 ```
