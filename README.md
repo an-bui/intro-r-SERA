@@ -7,4 +7,5 @@ Materials are adapted from [Data Analysis and Visualization in R for Ecologists]
 |     Parts     |      Topics      |                     Files                        |
 |---------------------|---------------------------|----------------------------------------------------| 
 |     Part 1     |     Basics of R    |  `script-key.R`, `script-template.R` |
+| Break |
 |    Part 2    |    Data wrangling and visualization    | `markdown-key.Rmd`, `markdown-template.Rmd`|
